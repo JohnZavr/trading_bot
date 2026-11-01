@@ -1,0 +1,6 @@
+pybit
+python-dotenv
+pandas
+ta
+fastapi[standard]
+sse-starlette

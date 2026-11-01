@@ -1,0 +1,50 @@
+
+html {
+	box-sizing: border-box;
+	-webkit-text-size-adjust: 100%; /* Защита от авто-увеличения текста на мобильных устройствах */
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #212529;
+	background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 0;
+	margin-bottom: 0.5rem;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+ol, ul {
+	padding-left: 2rem;
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+img {
+	vertical-align: middle;
+}
+
+input, button, select, textarea {
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}

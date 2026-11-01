@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{% block title %}{% endblock %}</title>
+		<link rel="shortcut icon" href="{{ url_for('static', path='img/line_graph.svg') }}" type="image/svg">
+		<link rel="stylesheet" href="{{ url_for('static', path='css/reset.css') }}" type="text/css">
+		<link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}" type="text/css">
+	</head>
+	<body>
+		<header>
+			<div class="header-body">
+				<a href="{{ url_for('index') }}" class="header-brand">
+					<img class="header-logo" src="{{ url_for('static', path='img/trend_logo.svg') }}" alt="trade-logo">
+					<h2 class="header-title"><span class="custom-txt">Trade</span>Link</h2>
+				</a>
+			</div>
+		</header>
+
+		<main class="system-monitor">
+			{% block content %}{% endblock %}
+		</main>
+
+		<footer>
+			<div class="footer-body">
+				<p class="footer-copyright">&copy; 2026 TradeLink, Inc.</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	System Monitor
+{% endblock %}
+
+{% block content %}
+
+	<div id="market-area">
+		<div class="current-symbol">
+			<img class="symbol-logo" src="{{ url_for('static', path='img/btc_logo.svg') }}" alt="BTC/USDT">
+			<div class="currency-title">BTC/USDT</div>
+		</div>
+		<div id="current-price"></div>
+	</div>
+
+	<div id="chart-container"></div>
+
+	<div class="terminal-container">
+		<div class="terminal-header">
+			<div class="terminal-title">Terminal</div>
+			<div class="bot-status">
+				<div id="status-light" class="inactive"></div>
+				<span id="status-txt">Loading...</span>
+			</div>
+		</div>
+		<div class="terminal-body" id="terminal">
+			<div id="status-line"><span class="cursor"></span></div>
+		</div>
+	</div>
+
+	<div class="control-panel">
+		<button id="start-btn" type="submit" value="start">START</button>
+		<button id="stop-btn" type="submit" class="stop" value="stop">STOP</button>
+	</div>
+
+	<script src="{{ url_for('static', path='js/lightweight-charts.standalone.production.js') }}"></script>
+	<script src="{{ url_for('static', path='js/main.js') }}"></script>
+	<script src="{{ url_for('static', path='js/terminal.js') }}"></script>
+
+{% endblock %}
