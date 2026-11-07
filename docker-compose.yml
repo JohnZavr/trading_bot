@@ -1,0 +1,28 @@
+
+name: bot-container
+
+services:
+  bot:
+    build: .
+    image: trading_bot
+    container_name: bot
+    restart: always
+    volumes:
+      - static_volume:/app/static  # Монтируем статику
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  nginx:
+    image: nginx:trixie
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"  # Открываем 80-й порт
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro  # Пробрасываем конфиг
+      - static_volume:/usr/share/nginx/html/static/:ro
+    depends_on:
+      - bot
+
+volumes:
+  static_volume:
