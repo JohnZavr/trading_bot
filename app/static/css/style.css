@@ -95,6 +95,11 @@ header {
 #chart-container {
 	margin-top: 7px;
 	box-shadow: 0 0 10px 0.5px gainsboro;
+	cursor: crosshair !important;
+}
+
+#chart-container:active {
+	cursor: grab !important;
 }
 
 .control-panel {
